@@ -1,9 +1,58 @@
-<html>
-    <head>
-        <title>Welcome</title>
-    </head>
-    <body>
-        <h1>Welcome to My App</h1>\
-        <p>This is a simple welcome page.</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Welcome Back</h2>
+            <p>Please enter your details to sign in.</p>
+            
+            <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" required placeholder=" ">
+                <label for="email">Email Address</label>
+            </div>
+
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" required placeholder=" ">
+                <label for="password">Password</label>
+                <i class="fa-solid fa-eye-slash toggle-password" id="eye-icon"></i>
+            </div>
+
+            <div class="form-actions">
+                <label class="remember-me">
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="submit-btn">Sign In</button>
+            
+            <p class="register-prompt">Don't have an account? <a href="#">Sign up</a></p>
+        </form>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const eyeIcon = document.getElementById('eye-icon');
+
+        eyeIcon.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            // Toggle the eye / eye-slash icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
 </html>
