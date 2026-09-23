@@ -64,7 +64,6 @@ body {
     box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
 }
 
-/* Floating Label Animation */
 .input-group label {
     position: absolute;
     top: 14px;

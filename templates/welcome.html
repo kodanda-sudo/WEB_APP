@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Login Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <div class="login-container">
         <form class="login-form">
             <h2>Welcome Back</h2>
             <p>Please enter your details to sign in.</p>
-            
             <div class="input-group">
                 <i class="fa-solid fa-envelope"></i>
                 <input type="email" id="email" required placeholder=" ">
@@ -35,7 +33,7 @@
             </div>
 
             <button type="submit" class="submit-btn">Sign In</button>
-            
+
             <p class="register-prompt">Don't have an account? <a href="#">Sign up</a></p>
         </form>
     </div>
@@ -45,11 +43,8 @@
         const eyeIcon = document.getElementById('eye-icon');
 
         eyeIcon.addEventListener('click', function () {
-            // Toggle the type attribute
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
-            
-            // Toggle the eye / eye-slash icon
             this.classList.toggle('fa-eye');
             this.classList.toggle('fa-eye-slash');
         });
